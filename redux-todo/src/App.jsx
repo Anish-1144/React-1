@@ -1,13 +1,15 @@
-import React from 'react'
+import AddTodo from './components/addTodo';
+import Todos from './components/Todo';
+ import './App.css'
 
 function App() {
+
   return (
-    <>
-      <h1 className="text-3xl text-center font-bold underline">
-      Hello world!
-    </h1>
-      
-    </>
+   <>
+
+<AddTodo/>
+<Todos/>
+   </>
   )
 }
 
