@@ -1,21 +1,22 @@
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
-import container from "./container/Container";
-import logo from "./Logo";
-import Logoutbtn  from "./Header/Logoutbtn/Logoutbtn";
-import Input from "./Header/input";
-import Button from "./Header/Button";
+import Container from "./container/Container";
+import Logo from "./Logo";
+import Logoutbtn  from "./Header/Logoutbtn.jsx";
+import Input from "./Input.jsx";
+import Button from "./Button.jsx";
 import Postcart from "./Postcart";
 import Login from "./Login";
 import Select from './Select';
 import RTE from "./RTE";
 import Signup from "./Signup";
 import PostForm from "./PostForm/PostForm";
+import AuthLayout from "./AuthLayout"
 export{
     Header,
     Footer,
-    container,
-    logo,
+    Container,
+    Logo,
     Logoutbtn,
     Input,
     Button,
@@ -25,6 +26,7 @@ export{
     RTE,
     Signup,
     PostForm,
+    AuthLayout,
     
 
 }

@@ -10,11 +10,6 @@ function Select({
 
     const Id = useId()
 
-
-
-
-
-
   return (
     <div className='w-full'>{label&& <label htmlFor={Id} className=''>
         </label>}
