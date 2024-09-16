@@ -1,9 +1,9 @@
 import React from 'react'
-import {Logo,Logoutbtn} from '../index'
+import {Container ,Logo,Logoutbtn} from '../index'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import Container from '../container/Container'
+// import Container from '../container/Container'
 
 
 
@@ -22,22 +22,22 @@ const navItems =[
 {
   name:"login",
   slug:"/login",
-  active:!authStatus 
+  active:!authStatus, 
 },
 {
   name:"Signup",
   slug:"/signup",
-  active:!authStatus 
+  active:!authStatus, 
 },
 {
   name:"All post ",
   slug:"/all post ",
-  active:!authStatus 
+  active:!authStatus, 
 },
 {
   name:"Add post ",
   slug:"/add post ",
-  active:!authStatus 
+  active:!authStatus, 
 },
 
 ]

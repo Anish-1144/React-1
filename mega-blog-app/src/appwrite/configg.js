@@ -1,4 +1,4 @@
-import config from "../config/config";
+import config from "../config/config.js";
 import { Client,Databases,Storage,Query,ID } from "appwrite";
 
 export class Service{
@@ -27,7 +27,7 @@ async createPost({title,slug,content,featuredImage,status,userId}){
             }
         )
     } catch (error) {
-        console.log(error);
+        console.log("Appwrite serive :: createPost :: error", error);
         
     }
 }
@@ -46,7 +46,7 @@ try {
         }
     )
 } catch (error) {
-    console.log(error);
+    console.log("Appwrite serive :: updatePost :: error", error);
     
 }
 
@@ -62,7 +62,7 @@ async deletePost(slug){
         )
         return true;
     } catch (error) {
-        console.log(error);
+        console.log("Appwrite serive :: deletePost :: error", error);
         return false;
         
     }
@@ -78,7 +78,7 @@ async getPost(slug){
         )
         
     } catch (error) {
-        console.log(error);
+        console.log("Appwrite serive :: getPost :: error", error);
         return false;
     }
 
@@ -93,7 +93,7 @@ try {
 
     )
 } catch (error) {
-    console.log(error);
+    console.log("Appwrite serive :: getPosts :: error", error);
     return false;
     
 }
@@ -113,7 +113,7 @@ async uploadFile(file){
 
         )   
     } catch (error) {
-        console.log(error);
+        console.log("Appwrite serive :: uploadFile :: error", error);
         return false;
         
     }
@@ -127,7 +127,7 @@ try {
      return true;
     
 } catch (error) {
-    console.log(error);
+    console.log("Appwrite serive :: deleteFile :: error", error);
     return false;
   
 }

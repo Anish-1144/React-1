@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import{login} from '../store/authSlice'
 import authService from '../appwrite/auth'
@@ -19,8 +19,8 @@ function Signup() {
         try {
             const userData = await authService.createAccount(data)
             if(userData){
-                const userData = await authService.getcurrentUser()
-                if (userData)  dispatch (authLogin(userData))
+                const userData = await authService.getCurrentUser()
+                if (userData)  dispatch (login(userData))
                 nevigate("/")
             }
             

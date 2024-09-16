@@ -25,7 +25,7 @@ const id = UseId()
 
                 <input 
                 type={type}
-                className={`${className} outline-none w-full bg-transparent py-1.5`}
+                className={`px-3 py-2 rounded-lg bg-white text-black outline-none focus:bg-gray-50 duration-200 border border-gray-200 w-full ${className}`}
                 ref={ref}
                 {...props}
                 id ={id} />

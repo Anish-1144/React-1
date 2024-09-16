@@ -1,9 +1,10 @@
-import React from 'react'
+import React ,{ useState } from 'react'
 import{Link,useNavigate} from 'react-router-dom'
 import {login as authLogin} from '../store/authSlice'
 import {useDispatch} from 'react-redux'
 import authService from '../appwrite/auth'
 import {useForm} from 'react-hook-form'
+import {Button, Input, Logo} from "./index"
 
 
 
@@ -18,7 +19,7 @@ const login = async(data)=>{
     try {
         const session = await authService.login(data)
         if(session){
-            const userData = await authService.getcurrentUser()
+            const userData = await authService.getCurrentUser()
             if (userData)  dispatch (authLogin({userData}))
             nevigate("/")
         }
