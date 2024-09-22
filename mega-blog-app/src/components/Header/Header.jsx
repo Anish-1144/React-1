@@ -32,12 +32,12 @@ const navItems =[
 {
   name:"All post ",
   slug:"/all post ",
-  active:!authStatus, 
+  active:authStatus, 
 },
 {
   name:"Add post ",
   slug:"/add post ",
-  active:!authStatus, 
+  active:authStatus, 
 },
 
 ]

@@ -8,7 +8,7 @@ export default function PostForm({post}) {
     const {register,handleSubmit,watch,setValue,control,getValues} = useForm({
         defaultValues : {
             title : post?.title||"",
-            slug : post?.slug||"",
+            slug : post?.$id||"",
             content : post?.content||"",
             status : post?.status||"active",
 
@@ -18,7 +18,7 @@ export default function PostForm({post}) {
     });
 
     const navigate = useNavigate()
-    const userData = useSelector(state => state.user.userData)
+    const userData = useSelector((state) => state.user.userData)
 
     const Submit = async (data)=>{
         if (post) {
@@ -27,12 +27,12 @@ export default function PostForm({post}) {
                 appwriteService.deleteFile(post.featuredImage);
              }
 
-             const bdPost = await appwriteService.updatePost(post.$id,{
+             const dbPost = await appwriteService.updatePost(post.$id,{
                 ...data,
                 featuredImage : file ? file.$id : undefined,
             })
-                if (bdPost){
-                    navigate(`/post/${bdPost.$id}`)
+                if (dbPost){
+                    navigate(`/post/${dbPost.$id}`)
                 } 
                  }  else{
                     const file = await appwriteService.uploadFile(data.image[0]);
@@ -76,7 +76,7 @@ React.useEffect (()=>{
 
         return ()=> subscription.unsubscribe()
 }
-,[watch],slugTransform,setValue)
+,[watch,slugTransform,setValue])
 
 return (
     <form onSubmit={handleSubmit(Submit)} className="flex flex-wrap">
