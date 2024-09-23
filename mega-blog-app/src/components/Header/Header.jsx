@@ -14,13 +14,13 @@ const navigate = useNavigate()
 
 const navItems =[
 {
-  name:"Home",
+  name:'Home',
   slug :"/",
   active : true,
 
 },
 {
-  name:"login",
+  name:"Login",
   slug:"/login",
   active:!authStatus, 
 },
@@ -31,12 +31,12 @@ const navItems =[
 },
 {
   name:"All post ",
-  slug:"/all post ",
+  slug:"/all-post ",
   active:authStatus, 
 },
 {
   name:"Add post ",
-  slug:"/add post ",
+  slug:"/add-post ",
   active:authStatus, 
 },
 
@@ -57,7 +57,7 @@ const navItems =[
 
               item.active? (
                 <li key={item.name}> 
-                <button onChange={()=>navigate(item.slug)}
+                <button onClick={()=>navigate(item.slug)}
                   className='inline-block px-6 py-2 duration-200 rounded-lg bg-blue-500 hover:bg-blue-600 text-white'> 
                   {item.name}
                 </button>

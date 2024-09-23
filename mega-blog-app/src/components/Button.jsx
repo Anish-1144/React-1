@@ -1,13 +1,13 @@
 import React from 'react'
 
-function Button(  
-   children,
+export default function Button(  
+  { children,
    type ="button",
    bgColor="bg-blue-500",
    textColor="text-white",
    className="",
    ...props
-
+}
 ) {
 
   return (
@@ -17,4 +17,4 @@ function Button(
   )
 }
 
-export default Button
+ 

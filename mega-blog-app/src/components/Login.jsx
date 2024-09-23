@@ -12,7 +12,8 @@ function Login() {
 const nevigate = useNavigate()
 const dispatch = useDispatch()
 const {register,handleSubmit} = useForm()
-const {error,setError} = useState("")
+const [error, setError] = useState("")
+
 
 const login = async(data)=>{
     setError("")
@@ -20,7 +21,7 @@ const login = async(data)=>{
         const session = await authService.login(data)
         if(session){
             const userData = await authService.getCurrentUser()
-            if (userData)  dispatch (authLogin({userData}));
+            if (userData)  dispatch (authLogin(userData));
             nevigate("/")
         }
         
@@ -62,7 +63,8 @@ return (
               {...register("email",{
                 required:true,
                 validate:{
-                    matchPatern:(value)=>/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Invalid Email"
+                    matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                        "Email address must be a valid address",
                 },
               })}
                /> 
@@ -79,7 +81,7 @@ return (
                 <Button
                 type = "submit"
                 className = "w-full"
-                >Sign Up</Button>
+                >Sign in </Button>
 
             </div>
         </form>

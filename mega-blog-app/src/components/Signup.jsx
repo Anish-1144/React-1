@@ -8,10 +8,11 @@ import {Button, Input,Logo} from './index'
 
 function Signup() {
     
-        const nevigate = useNavigate()
+        const navigate = useNavigate()
         const dispatch = useDispatch()
         const {register,handleSubmit} = useForm()
-        const {error,setError} = useState("")
+        const [error, setError] = useState("");
+
 
     const create = async (data)=>{
         setError("")
@@ -20,8 +21,9 @@ function Signup() {
             const userData = await authService.createAccount(data)
             if(userData){
                 const userData = await authService.getCurrentUser()
-                if (userData)  dispatch (login(userData))
-                nevigate("/")
+                if (userData)  dispatch(login(userData));
+                    navigate("/");
+
             }
             
         } catch (error) {
@@ -77,9 +79,11 @@ function Signup() {
                             label="Password: "
                             type="password"
                             placeholder="Enter your password"
+                            autoComplete="new-password"
                             {...register("password", {
                                 required: true,})}
                             />
+
                             <Button type="submit" className="w-full">
                                 Create Account
                             </Button>

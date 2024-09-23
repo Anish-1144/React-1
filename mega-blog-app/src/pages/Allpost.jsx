@@ -5,9 +5,9 @@ import appwriteService from '../appwrite/configg'
 function Allposts() {
  const [posts,setPosts] = React.useState([])
  useEffect(()=>{},[])
- appwriteService.getPosts([]).then((Posts)=>{
+ appwriteService.getPosts([]).then((posts)=>{
     if(posts){
-        setPosts(Posts.documents)
+        setPosts(posts.documents)
     }
 
  })
@@ -29,4 +29,4 @@ function Allposts() {
   )
 }
 
-export default Allposts
+export default Allposts;

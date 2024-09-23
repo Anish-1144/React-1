@@ -22,7 +22,7 @@ export default function PostForm({post}) {
 
     const Submit = async (data)=>{
         if (post) {
-            const file = data.image[0]?  await appwriteService.uploadFile(data.image[0]) : null
+            const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null
              if(file){
                 appwriteService.deleteFile(post.featuredImage);
              }
@@ -54,8 +54,8 @@ export default function PostForm({post}) {
                     .trim()
                     .toLowerCase()
                     .replace(/^[a-zA-Z\d\s]+/g,'-')
-                    // .replace(/\s+/g,'-')
-                    .replace(/[^\w-]+/g,'');
+                    .replace(/\s+/g,'-')
+                    // .replace(/[^\w-]+/g,'');
 
             return "";
         
