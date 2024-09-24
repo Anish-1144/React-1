@@ -15,15 +15,17 @@ export class Service{
     }
 async createPost({title,slug,content,featuredImage,status,userId}){
     try {
+        console.log(featuredImage);
+        
         return await this.databases.createDocument(
             config.appwriteDatabase,
             config.appwriteCollectionId,
             slug,{
                 title,
                 content,
-                featuredImage,
+                featuredimage : featuredImage,
                 status,
-                userId,
+                userid : userId,
             }
         )
     } catch (error) {
@@ -137,7 +139,6 @@ getFilePreview(fileId){
     return this.bucket.getFilePreview(
  config.appwriteBucketId,
  fileId
-
     )
 
     }

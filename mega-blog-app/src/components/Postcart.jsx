@@ -1,7 +1,8 @@
 import React from 'react'
 import appwriteService from '../appwrite/configg'
 import {Link} from 'react-router-dom'
-function Postcart({$id,title,featuredImage}) {
+function Postcart({$id,title,featuredimage}) {
+
   return (
     <Link to = {`/post/${$id}`}>
 
@@ -9,7 +10,7 @@ function Postcart({$id,title,featuredImage}) {
 
             <div className=' w-full justify-center mb-4'>
 
-                <img src={appwriteService.getFilePreview(featuredImage)} alt={title} className=' rounded-xl'/>
+                <img src={appwriteService.getFilePreview(featuredimage)} alt={title} className=' rounded-xl'/>
 
             </div>
 

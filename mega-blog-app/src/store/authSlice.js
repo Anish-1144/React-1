@@ -16,6 +16,7 @@ import {createSlice} from "@reduxjs/toolkit";
               state.userData = action.payload.userData;   
             },
              logout:(state)=>{
+                
                 state.status=false;
                 state.userData = null;
 

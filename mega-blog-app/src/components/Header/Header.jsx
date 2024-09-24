@@ -31,12 +31,12 @@ const navItems =[
 },
 {
   name:"All post ",
-  slug:"/all-post ",
+  slug:"/all-post",
   active:authStatus, 
 },
 {
   name:"Add post ",
-  slug:"/add-post ",
+  slug:"/add-post",
   active:authStatus, 
 },
 
